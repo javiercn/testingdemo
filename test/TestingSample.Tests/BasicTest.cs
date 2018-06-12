@@ -5,14 +5,14 @@ using Xunit;
 
 namespace TestingSample.Tests
 {
-    public class BasicTests : IClassFixture<CustomWebApplicationFactory>
+    public class BasicTests : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
-        public BasicTests(CustomWebApplicationFactory factory)
+        public BasicTests(CustomWebApplicationFactory<Startup> factory)
         {
             Factory = factory;
         }
 
-        public CustomWebApplicationFactory Factory { get; }
+        public CustomWebApplicationFactory<Startup> Factory { get; }
 
         [Fact]
         public async Task GetHome()
